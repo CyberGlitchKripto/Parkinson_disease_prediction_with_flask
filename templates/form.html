@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Parkinson's Voice Test Form</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f5f5f5;
+      color: #222;
+      width: 21cm;
+      margin: auto;
+      padding: 1.5cm;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    fieldset {
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+      padding: 10px 15px;
+      background-color: #fff;
+    }
+
+    legend {
+      font-weight: bold;
+      padding: 0 10px;
+    }
+
+    label {
+      display: inline-block;
+      width: 250px;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+
+    .required-star {
+      color: red;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 200px;
+      padding: 5px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    input[type="number"] {
+      appearance: none; /* Standard property */
+      -webkit-appearance: none; /* For Chrome/Safari */
+      -moz-appearance: none; /* For Firefox */
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none; /* Remove spinners in Chrome/Safari */
+      margin: 0;
+    }
+
+    .submit-buttons {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    button[type="reset"] {
+      background-color: #f44336;
+    }
+
+    button[type="button"] {
+      background-color: #2196F3;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    @media print {
+      button {
+        display: none;
+      }
+
+      body {
+        background: #fff;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h2>Parkinson’s Voice Test Form</h2>
+
+  <form method="POST">
+    <fieldset>
+      <legend>Patient Information</legend>
+      <label>What is the patient’s unique ID? (Optional)</label>
+      <input type="text" name="subject" placeholder="e.g., P001"><br>
+      <label>What is the patient’s age? <span class="required-star">*</span></label>
+      <input type="number" name="age" required placeholder="e.g., 60" min="0" max="120"><br>
+      <label>What is the patient’s sex? <span class="required-star">*</span></label>
+      <select name="sex" required>
+        <option value="">-- Select Sex --</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select><br>
+      <label>When was the voice test conducted? (Optional)</label>
+      <input type="date" name="test_time"><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>Jitter Metrics</legend>
+      <label>What is the Jitter percentage for the patient’s voice? <span class="required-star">*</span></label>
+      <input type="number" name="Jitter(%)" required placeholder="e.g., 0.25" step="0.001" min="0"><br>
+      <label>What is the absolute Jitter value for the patient’s voice? <span class="required-star">*</span></label>
+      <input type="number" name="Jitter(Abs)" required placeholder="e.g., 0.0012" step="0.0001" min="0"><br>
+      <label>What is the Jitter:RAP value for the patient’s voice? <span class="required-star">*</span></label>
+      <input type="number" name="Jitter:RAP" required placeholder="e.g., 0.003" step="0.001" min="0"><br>
+      <label>What is the Jitter:PPQ5 value for the patient’s voice? <span class="required-star">*</span></label>
+      <input type="number" name="Jitter:PPQ5" required placeholder="e.g., 0.004" step="0.001" min="0"><br>
+      <label>What is the Jitter:DDP value for the patient’s voice? <span class="required-star">*</span></label>
+      <input type="number" name="Jitter:DDP" required placeholder="e.g., 0.009" step="0.001" min="0"><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>Shimmer Metrics</legend>
+      <label>What is the Shimmer value for the patient’s voice? <span class="required-star">*</span></label>
+      <input type="number" name="Shimmer" required placeholder="e.g., 0.023" step="0.001" min="0"><br>
+      <label>What is the Shimmer value in decibels (dB) for the patient’s voice? <span class="required-star">*</span></label>
+      <input type="number" name="Shimmer(dB)" required placeholder="e.g., 0.33" step="0.01" min="0"><br>
+      <label>What is the Shimmer:APQ3 value for the patient’s voice? <span class="required-star">*</span></label>
+      <input type="number" name="Shimmer:APQ3" required placeholder="e.g., 0.015" step="0.001" min="0"><br>
+      <label>What is the Shimmer:APQ5 value for the patient’s voice? <span class="required-star">*</span></label>
+      <input type="number" name="Shimmer:APQ5" required placeholder="e.g., 0.017" step="0.001" min="0"><br>
+      <label>What is the Shimmer:APQ11 value for the patient’s voice? <span class="required-star">*</span></label>
+      <input type="number" name="Shimmer:APQ11" required placeholder="e.g., 0.018" step="0.001" min="0"><br>
+      <label>What is the Shimmer:DDA value for the patient’s voice? <span class="required-star">*</span></label>
+      <input type="number" name="Shimmer:DDA" required placeholder="e.g., 0.045" step="0.001" min="0"><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>Voice Ratios</legend>
+      <label>What is the Noise-to-Harmonics Ratio (NHR) for the patient’s voice? <span class="required-star">*</span></label>
+      <input type="number" name="NHR" required placeholder="e.g., 0.022" step="0.001" min="0"><br>
+      <label>What is the Harmonics-to-Noise Ratio (HNR) for the patient’s voice? <span class="required-star">*</span></label>
+      <input type="number" name="HNR" required placeholder="e.g., 21.5" step="0.1" min="0"><br>
+      <label>What is the Recurrence Period Density Entropy (RPDE) for the patient’s voice? <span class="required-star">*</span></label>
+      <input type="number" name="RPDE" required placeholder="e.g., 0.58" step="0.01" min="0" max="1"><br>
+      <label>What is the Detrended Fluctuation Analysis (DFA) value for the patient’s voice? <span class="required-star">*</span></label>
+      <input type="number" name="DFA" required placeholder="e.g., 0.74" step="0.01" min="0" max="1"><br>
+      <label>What is the Pitch Period Entropy (PPE) for the patient’s voice? <span class="required-star">*</span></label>
+      <input type="number" name="PPE" required placeholder="e.g., 0.12" step="0.01" min="0"><br>
+    </fieldset>
+
+    <div class="submit-buttons">
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+      <button type="button" onclick="window.print()">🖨️ Printje This Form</button>
+    </div>
+  </form>
+</body>
+</html>
