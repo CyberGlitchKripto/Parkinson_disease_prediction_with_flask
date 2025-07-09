@@ -1,0 +1,18 @@
+1. python3 -m venv venv
+2. source venv/bin/activate
+
+Here's what each does in your code:
+
+| Package            | Why you need it                                    |
+| ------------------ | -------------------------------------------------- |
+| `flask`            | Web framework to run the app                       |
+| `pandas`           | Data handling and form input conversion            |
+| `numpy`            | Numerical ops and model inputs                     |
+| `matplotlib`       | For pie chart, bar chart, confusion matrix         |
+| `seaborn`          | (optional) pretty plots — you're using it above    |
+| `scikit-learn`     | All ML stuff — preprocessing, models, metrics      |
+| `xgboost`          | XGBoost classifier                                 |
+| `imbalanced-learn` | `RandomOverSampler` to fix class imbalance         |
+| `joblib`           | Save/load model, scaler, encoder, feature selector |
+
+pip install flask pandas numpy matplotlib seaborn scikit-learn xgboost imbalanced-learn joblib
